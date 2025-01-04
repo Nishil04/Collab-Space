@@ -1,0 +1,85 @@
+body {
+    background: url("/static/imgs/im1.jpg") no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.required {
+    color: red;
+}
+
+.form {
+    width: 35%
+}
+
+.form-group {
+    margin: .8rem .4rem;
+}
+
+#submitBtnGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 1.8rem;
+}
+
+.register-prompt {
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    margin-block-start: 1rem;
+    color: rgb(107, 107, 107);
+
+}
+
+.register-prompt a {
+    font-weight: bold;
+}
+
+
+.info {
+    background-color: #43a7f4 !important;
+    color: white !important;
+}
+
+.error {
+    background-color: red !important;
+    color: white !important;
+}
+
+.success {
+    background-color: #1d9d61 !important;
+    color: white !important;
+}
+
+#message-bar {
+    font-size: 1rem;
+    font-weight: 400;
+    transition: 2s ease;
+    width: 100% !important;
+}
+
+.d-none {
+    display: none;
+}
+
+#btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.customBtn {
+    margin-right: .4rem !important;
+}

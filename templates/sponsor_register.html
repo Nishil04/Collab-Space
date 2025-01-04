@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sponsor Registration</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for ('static',filename='/css/influencer_auth.css') }}"
+    />
+  </head>
+
+  <body>
+    <img
+      src="{{url_for('static',filename='/imgs/Collab_Space.jpg')}}"
+      width="80"
+      height="60"
+    />
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category,message in messages %}
+    <div
+      class="alert alert-success {{category}} alert-dismissible fade show"
+      id="message-bar"
+      role="alert"
+    >
+      {{message}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+    <div class="main-container">
+      <div class="title">Sponsor Registration</div>
+
+      <form name="form" class="form" action="/sponsor/register" method="POST">
+        <div class="form-group">
+          <label for="tcompanyname"
+            >Company name<span class="required">*</span></label
+          >
+          <input
+            type="text"
+            id="tcompanyname"
+            class="form-control"
+            name="tcompanyname"
+            placeholder="Enter Company name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tindustry">Industry<span class="required">*</span></label>
+          <input
+            type="text"
+            id="tindustry"
+            class="form-control"
+            name="tindustry"
+            placeholder="Enter Industry"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tbudget">Budget<span class="required">*</span></label>
+          <input
+            type="number"
+            id="tbudget"
+            class="form-control"
+            name="tbudget"
+            placeholder="Enter Budget"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="treach">Reach<span class="required">*</span></label>
+          <input
+            type="text"
+            id="treach"
+            class="form-control"
+            name="treach"
+            placeholder="Enter Reach"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tuse">Username<span class="required">*</span></label>
+          <input
+            type="text"
+            id="tuse"
+            class="form-control"
+            name="tuse"
+            placeholder="Enter Username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tpas">Password<span class="required">*</span></label>
+          <input
+            type="password"
+            id="tpas"
+            class="form-control"
+            name="tpas"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+        <div class="form-group" id="submitBtnGroup">
+          <button type="submit" class="btn btn-primary w-100">Register</button>
+          <div class="register-prompt">
+            If already a registered user,
+            <a href="/sponsor/login" class="link">Login Here</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="{{url_for('static',filename='/scripts/app.js')}}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
